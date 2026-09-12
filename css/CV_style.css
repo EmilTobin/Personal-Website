@@ -1,0 +1,189 @@
+/* Fonter */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Syne:wght@700;800&display=swap');
+
+/* Mørkt tema og generelle innstillinger */
+body {
+    font-family: 'Fira Code', monospace;
+    background-color: #020202; 
+    color: #ededed;           
+    margin: 0;
+    padding: 0px 130px;        
+}
+
+/* Overskrifter med karaktersterke Syne */
+h1, h2, h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;  
+    margin-top: 20px;
+}
+
+/* ---- Header & SVG-ramme (Fiksert i toppen) ---- */
+header {
+    position: fixed;          
+    top: -10px;               
+    left: 40px;               
+    right: 40px;
+    z-index: 1000;            
+}
+
+/* Skyver alt innholdet i <main> ned slik at det danner avstand til rammen */
+main {
+    padding-top: 250px; /* Dytter alt trygt ned under rammen */
+    opacity: 0; 
+    animation-name: ultraSmoothFade;
+    animation-duration: 0.8s; 
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1); 
+    animation-fill-mode: forwards;
+    animation-delay: 0.2s;
+}
+
+nav {
+    position: relative;
+    width: 100%;
+
+    background-image: url('../Images/ramme4.svg'); 
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    aspect-ratio: 1821 / 179; 
+
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 5px 100px 30px 100px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffe4e4;           
+    font-family: inherit;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: #ffffff;           
+}
+
+/* ---- Scrollbar ---- */
+html::-webkit-scrollbar { display: none; }
+html { scrollbar-width: none; -ms-overflow-style: none; }
+
+/* ---- Animasjoner ---- */
+@keyframes ultraSmoothFade {
+    0% {
+        opacity: 0;
+        transform: translateY(-5px);
+        filter: blur(1px); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);    
+    }
+}
+
+/* --- Global Container for CV-en --- */
+.cv-container {
+    max-width: 1000px;
+    margin: 0px;
+    padding: 0px;
+    color: #e0e0e0;
+}
+
+.cv-header {
+    margin-top: 135px; /* Dytter navnet og kontaktinfoen videre ned */
+    left: 0px;
+}
+
+/* Navnet ditt i toppen av CV-en */
+.cv-header h1 {
+    font-family: 'Syne', sans-serif;
+    /*font-size: 2.8rem;*/
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+}
+
+.contact-list li {
+    font-size: 0.95rem;
+    color: #a0a0a0;
+    margin-bottom: 6px;
+}
+
+.contact-list strong {
+    color: #ffffff;
+}
+
+/* --- Seksjons-overskrifter (Experience, Education osv.) --- */
+.cv-section h2 {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Bruker Syne i stedet for Helvetica */
+    font-size: 1.6rem;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 12px;                        
+    padding-bottom: 8px;
+    border-bottom: 2px solid #ffffff;  
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+
+.cv-section h2::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;         
+    border-radius: 50%;                
+    flex-shrink: 0;
+}
+
+/* --- Enkeltelementer i CV-en --- */
+.cv-item {
+    margin-bottom: 25px;
+}
+
+.cv-item p {
+    margin: 3px 0;
+    line-height: 1.5;
+}
+
+.company-location,
+.institution-location,
+.role-location-date {
+    color: #ffffff;
+    font-size: 1.05rem;
+}
+
+.job-title-date,
+.degree-date {
+    color: #cccccc;
+    font-size: 0.95rem;
+}
+
+.description {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    margin-top: 6px;
+}
+
+.cv-container hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.15); 
+    margin: 40px 0;
+}
