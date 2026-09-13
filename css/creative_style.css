@@ -1,61 +1,55 @@
 /* Fonter */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Syne:wght@700;800&display=swap');
 
-/* Mørkt tema og generelle innstillinger */
 body {
     font-family: 'Fira Code', monospace;
-    background-color: #020202; /* Bakgrunn */
-    color: #ededed;            /* Hovedtekst */
+    background-color: #020202; 
+    color: #ededed;            
     margin: 0;
-    padding: 0px 130px;        /* Beholder plasseringen på alt innhold */
+    padding: 0px 130px;        
 }
 
-/* Overskrifter med karaktersterke Syne */
+/* Overskrifter med Syne */
 h1, h2, h3 {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
-    letter-spacing: -0.02em;   /* Gir overskriften et strammere, mer moderne uttrykk */
+    letter-spacing: -0.02em;   
     margin-top: 40px;
 }
 
-/* ---- Header & SVG-ramme (Fiksert i toppen) ---- */
+/* ---- Header ---- */
 header {
-    position: fixed;          /* Låser headern på skjermen uansett scrolling */
-    top: -10px;                   /* Plasserer den helt øverst mot toppkanten */
-    left: 40px;               /* Sørger for at den bevarer sidemarginene (130px - 90px = 40px) */
+    position: fixed;          
+    top: -10px;                   
+    left: 40px;               
     right: 40px;
-    z-index: 1000;            /* Holder rammen øverst over alt annet innhold */
-    
-    margin-top: 0;            /* Kan justeres til f.eks. -5px dersom SVG-filen selv har usynlig tomrom øverst */
+    z-index: 1000;            
+    margin-top: 0;            
 }
 
-/* Legg til luft øverst på hovedinnholdet slik at det ikke havner under den fikserte headern */
 main {
-    padding-top: 105px;       /* Juster denne verdien slik at "About me" starter på perfekt avstand under rammen */
+    padding-top: 105px;       
 }
 
 nav {
     position: relative;
     width: 100%;
     
-    /* Legger til din ramme3.svg */
     background-image: url('../Images/ramme4.svg'); 
     background-size: 100% 100%;
     background-repeat: no-repeat;
     
-    /* Bevarer proporsjonene fra SVG-en din (1821x179) */
+    /* SVG-en dimensjoner (1821x179) */
     aspect-ratio: 1821 / 179; 
 
-    /* Flex-oppsett for å sentrere innholdet vertikalt og horisontalt i rammen */
     display: flex;
     align-items: center;
     box-sizing: border-box;
 
-    /* Luft på innsiden av rammen slik at lenkene treffer perfekt i åpningen */
     padding: 5px 100px 30px 100px;
 }
 
-/* ---- Navigasjonslinje ---- */
+/* ---- Header ---- */
 nav ul {
     list-style: none;
     margin: 0;
@@ -67,28 +61,27 @@ nav ul {
     align-items: center;
 }
 
-/* Topptekst og lenker i navigasjonslinjen */
 nav a {
     text-decoration: none;
-    color: #ffe4e4;           /* Lavkontrast lys-grå for menyvalg */
+    color: #ffe4e4;           
     font-family: inherit;
     transition: color 0.2s ease;
 }
 
 nav a:hover {
-    color: #ffffff;           /* Teksten skifter farge ved hover */
+    color: #ffffff;           
 }
 
 /* ---- Scrollbar ---- */
-/* Skjul rullefelt for Chrome, Safari og Opera */
+/* Chrome, Safari og Opera */
 html::-webkit-scrollbar {
     display: none;
 }
 
-/* Skjul rullefelt for Firefox og IE/Edge */
+/* Firefox og IE/Edge */
 html {
-    scrollbar-width: none;     /* Firefox */
-    -ms-overflow-style: none;  /* Internet Explorer 10+ og Edge */
+    scrollbar-width: none;     
+    -ms-overflow-style: none;  
 }
 
 
@@ -96,7 +89,7 @@ html {
 /*---------------------------------------------------------------------------------
 
 
-/* --- Sentrert overskrift og intro-tekst --- */
+/* --- Overskrift og intro-tekst --- */
 h1 {
     text-align: center;
 }
@@ -109,34 +102,33 @@ h1 {
     text-align: center;
 }
 
-/* --- Sikksakk Bildegalleri --- */
+/* --- Bilder --- */
 .gallery {
     display: flex;
     flex-direction: column;
-    gap: 60px; /* Avstand mellom hvert prosjekt-ledd */
+    gap: 60px; 
     margin-top: 40px;
 }
 
 .gallery-item {
     display: flex;
     align-items: center;
-    gap: 40px; /* Luft mellom bildet og teksten ved siden av */
+    gap: 40px; 
 }
 
-/* Snu annenhver rad så bildet kommer til høyre/venstre (sikksakk) */
+/* Sikksakk */
 .gallery-item:nth-child(even) {
     flex-direction: row-reverse;
 }
 
-/* Bildeinnstillinger (tilpasset 1920x1080) */
+/* Dimesnjon 1920x1080 */
 .gallery-item img {
-    width: 50%; /* Bildet tar halvparten av bredden */
+    width: 50%; 
     height: auto;
-    border-radius: 0px; /* Valgfritt: myke opp hjørnene litt */
+    border-radius: 0px; 
     object-fit: cover;
 }
 
-/* Tekstblokk ved siden av bildet */
 .gallery-text {
     width: 50%;
 }
@@ -152,11 +144,11 @@ h1 {
     line-height: 1.6;
 }
 
-/* Rutenett for stående bilder */
+/* Rutenett bilder */
 .portrait-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 like store kolonner */
-    gap: 30px;                             /* Luft mellom bildene */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;                             
     margin-top: 50px;
 }
 
@@ -164,7 +156,7 @@ h1 {
     width: 80%;
     height: auto;
     display: block;
-    border-radius: 0;                      /* Beholder de skarpe kantene dine */
+    border-radius: 0; 
 }
 
 .portrait-item p {
@@ -176,15 +168,15 @@ h1 {
 .bird-animation {
     position: absolute;
     width: 450px;
-    left: 350px;         /* Flytter den til venstre (negative tall flytter lenger venstre) */
-    margin: 40px auto; /* Sentrerer videoen på siden med luft over og under */
+    left: 350px;         
+    margin: 40px auto; 
 }
 
 .bird-animation video {
     width: 230%;
     height: auto;
     display: block;
-    mix-blend-mode: screen; /* Fjerner den svarte bakgrunnen fra MP4-filen helt automatisk */
+    mix-blend-mode: screen;
 }
 
 
@@ -193,27 +185,25 @@ h1 {
     0% {
         opacity: 0;
         transform: translateY(-5px);
-        filter: blur(1px); /* Starter litt ute av fokus */
+        filter: blur(1px); 
     }
     100% {
         opacity: 1;
         transform: translateY(0);
-        filter: blur(0);    /* Glir helt skarpt på plass */
+        filter: blur(0);    
     }
 }
 
-/* Felles innstillinger for animerte elementer */
+/* Åpningsanimasjon */
 main {
-    opacity: 0; /* Skjuler før animasjonen starter */
+    opacity: 0; 
     animation-name: ultraSmoothFade;
-    animation-duration: 0.8s; /* Lengre varighet gir mykere følelse */
+    animation-duration: 0.8s; 
     
-    /* custom cubic-bezier for en veldig naturlig, silkeaktig oppbremsing */
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1); 
     animation-fill-mode: forwards;
 }
 
-/* Hovedinnholdet følger etter med en kort, overlappende forsinkelse */
 main {
     animation-delay: 0.2s;
 }

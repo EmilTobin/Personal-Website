@@ -1,0 +1,187 @@
+/* Fonter */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Syne:wght@700;800&display=swap');
+
+body {
+    font-family: 'Fira Code', monospace;
+    background-color: #020202; 
+    color: #ededed;            
+    margin: 0;
+    padding: 0px 130px;        
+}
+
+/* Overskrifter med Syne */
+h1, h2, h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;   
+    margin-top: 40px;
+}
+
+/* ---- Header ---- */
+header {
+    position: fixed;          
+    top: -10px;                   
+    left: 40px;               
+    right: 40px;
+    z-index: 1000;              
+    margin-top: 0;           
+}
+
+main {
+    padding-top: 105px;       
+}
+
+nav {
+    position: relative;
+    width: 100%;
+    
+    /* SVG-ramme*/
+    background-image: url('../Images/ramme4.svg'); 
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    
+    /* SVG dimensjoner (1821x179) */
+    aspect-ratio: 1821 / 179; 
+
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+
+    padding: 5px 100px 30px 100px;
+}
+
+/* ---- Header ---- */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffe4e4;           
+    font-family: inherit;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: #ffffff;           
+}
+
+/* ---- Scrollbar ---- */
+/* Chrome, Safari og Opera */
+html::-webkit-scrollbar {
+    display: none;
+}
+
+/* Firefox og IE/Edge */
+html {
+    scrollbar-width: none;     
+    -ms-overflow-style: none; 
+}
+
+
+/* ---- Animasjoner ---- */
+@keyframes ultraSmoothFade {
+    0% {
+        opacity: 0;
+        transform: translateY(-5px);
+        filter: blur(1px); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);    
+    }
+}
+
+/*---------------------------------------------------------------------------------
+
+/* Åpningsanimasjon */
+main {
+    opacity: 0; 
+    animation-name: ultraSmoothFade;
+    animation-duration: 0.8s; 
+    
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1); 
+    animation-fill-mode: forwards;
+}
+
+main {
+    animation-delay: 0.2s;
+}
+
+/* Jord-animasjon */
+.earth-animation {
+    z-index: -1000; 
+    width: 490px;
+    height: 440px;
+    overflow: hidden;
+    position: relative;
+
+    float: left;  
+    left: -10px;                         
+    shape-outside: circle(40% at 45% 60%);
+    shape-margin: 30px; 
+    margin-top: 60px;                        
+    margin-bottom: 20px;
+}
+
+.earth-animation video {
+  width: 130%;
+  max-width: none;
+  height: auto;
+  position: absolute;
+  top: 40%;
+  left: 60%; 
+  transform: translate(-50%, -50%);
+}
+
+
+
+/* ---- Lenker ---- */
+.social-links {
+    position: absolute;      
+    top: 500px;               
+    left: calc(130px + 400px + 40px); /* (Body padding) + (Jordens bredde) + (Ønsket gap) */
+    
+    display: flex;
+    flex-direction: column;   
+    gap: 15px;               
+    
+    margin-top: 0;           
+}
+
+/* Tekst for lenker */
+.social-item {
+    color: #ededed; 
+    display: flex;
+    align-items: center;      
+    text-decoration: none;    
+    gap: 12px; 
+}
+
+.social-text {
+    text-decoration: none;
+    line-height: 1;           
+}
+
+/* PNG-logoene */
+.social-logo {
+  display: block;
+    width: 28px;              
+    height: 28px;
+    object-fit: contain;    
+}
+
+.social-item:hover {
+  opacity: 0.7;          
+}
+
+
+
