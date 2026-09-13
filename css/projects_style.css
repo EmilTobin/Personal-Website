@@ -1,58 +1,53 @@
 /* Fonter*/
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Syne:wght@700;800&display=swap');
 
-/* Mørkt tema og generelle innstillinger */
 body {
     font-family: 'Fira Code', monospace;
-    background-color: #020202; /* Bakgrunn*/
-    color: #ededed;           /* Hovedtekst */
+    background-color: #020202; 
+    color: #ededed;           
     margin: 0;
-    padding: 0px 130px;       /* 20px luft oppe/nede, 130px luft på sidene */
+    padding: 0px 130px;      
 }
 
-/* Overskrifter med karaktersterke Syne */
+/* Overskrifter med Syne */
 h1, h2, h3 {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
-    letter-spacing: -0.02em;  /* Gir overskriften et strammere, mer moderne uttrykk */
+    letter-spacing: -0.02em;  
     margin-top: 40px;
 }
 
-/* ---- Navigasjonslinje ---- */
-/* ---- Header & SVG-ramme (Fiksert i toppen) ---- */
+/* ---- Header ---- */
 header {
-    position: fixed;          /* Låser headern på skjermen uansett scrolling */
-    top: -10px;                   /* Plasserer den helt øverst mot toppkanten */
-    left: 40px;               /* Sørger for at den bevarer sidemarginene (130px - 90px = 40px) */
+    position: fixed;          
+    top: -10px;                   
+    left: 40px;               
     right: 40px;
-    z-index: 1000;            /* Holder rammen øverst over alt annet innhold */
+    z-index: 1000;            
     
-    margin-top: 0;            /* Kan justeres til f.eks. -5px dersom SVG-filen selv har usynlig tomrom øverst */
+    margin-top: 0;            
 }
 
-/* Legg til luft øverst på hovedinnholdet slik at det ikke havner under den fikserte headern */
 main {
-    padding-top: 105px;       /* Juster denne verdien slik at "About me" starter på perfekt avstand under rammen */
+    padding-top: 105px;       
 }
 
 nav {
     position: relative;
     width: 100%;
     
-    /* Legger til din ramme3.svg */
+    /* SVG-ramme */
     background-image: url('../Images/ramme4.svg'); 
     background-size: 100% 100%;
     background-repeat: no-repeat;
     
-    /* Bevarer proporsjonene fra SVG-en din (1821x179) */
+    /* SVG dimensjon (1821x179) */
     aspect-ratio: 1821 / 179; 
 
-    /* Flex-oppsett for å sentrere innholdet vertikalt og horisontalt i rammen */
     display: flex;
     align-items: center;
     box-sizing: border-box;
 
-    /* Luft på innsiden av rammen slik at lenkene treffer perfekt i åpningen */
     padding: 5px 100px 30px 100px;
 }
 
@@ -67,65 +62,62 @@ nav ul {
     align-items: center;
 }
 
-/* Topptekst og lenker i navigasjonslinjen */
 nav a {
     text-decoration: none;
-    color: #ffe4e4;           /* Derset lavkontrast lys-grå for menyvalg */
+    color: #ffe4e4;           
     font-family: inherit;
     transition: color 0.2s ease;
 }
 
 nav a:hover {
-    color: #ffffff;           /* Teksten skifter farge ved hover */
+    color: #ffffff;           
 }
 
 
 /* ---- Scrollbar ---- */
-/* Skjul rullefelt for Chrome, Safari og Opera */
+/* Chrome, Safari og Opera */
 html::-webkit-scrollbar {
     display: none;
 }
 
-/* Skjul rullefelt for Firefox og IE/Edge */
+/* Firefox og IE/Edge */
 html {
-    scrollbar-width: none;  /* Firefox */
-    -ms-overflow-style: none;  /* Internet Explorer 10+ og Edge */
+    scrollbar-width: none;  
+    -ms-overflow-style: none;  
 }
 
-/* ---- Animasjoner ---- */
+/* ---- Åpningsanimasjon ---- */
 @keyframes ultraSmoothFade {
     0% {
         opacity: 0;
         transform: translateY(-5px);
-        filter: blur(1px); /* Starter litt ute av fokus */
+        filter: blur(1px); 
     }
     100% {
         opacity: 1;
         transform: translateY(0);
-        filter: blur(0);    /* Glir helt skarpt på plass */
+        filter: blur(0);    
     }
 }
 
-/* Felles innstillinger for animerte elementer */
 main {
-    opacity: 0; /* Skjuler før animasjonen starter */
+    opacity: 0; 
     animation-name: ultraSmoothFade;
-    animation-duration: 0.8s; /* Lengre varighet gir mykere følelse */
+    animation-duration: 0.8s; 
     
-    /* custom cubic-bezier for en veldig naturlig, silkeaktig oppbremsing */
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1); 
     animation-fill-mode: forwards;
 }
 
-/* Hovedinnholdet følger etter med en kort, overlappende forsinkelse */
 main {
     animation-delay: 0.2s;
 }
 
+/*---------------------------------------------------------------------------------
 
 
-/*--------Projects section--------*/
-/* --- Prosjekt Container & Seksjoner --- */
+
+/*-------- Prosjekter --------*/
 .project-container {
     max-width: 1000px;
     margin: 0;
@@ -133,7 +125,7 @@ main {
     color: #e0e0e0;
 }
 
-/* Seksjons-overskrifter */
+/* Overskrifter */
 .project-section h2 {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 1.6rem;
@@ -158,7 +150,6 @@ main {
     flex-shrink: 0;
 }
 
-/* Elementer (Artikler) */
 .project-item {
     margin-bottom: 25px;
 }
@@ -168,7 +159,6 @@ main {
     line-height: 1.5;
 }
 
-/* Tekststiler */
 .company-location,
 .institution-location {
     color: #ffffff;
@@ -196,13 +186,12 @@ main {
 
 /* Styling for lenkene i prosjektlisten */
 .company-location a {
-    color: #ffffff;             /* Samme farge som teksten foran */
-    font-family: inherit;       /* Arver Fira Code automatisk */
-    text-decoration: none; /* Beholder understrek (kan fjernes med 'none' om ønskelig) */
+    color: #ffffff;             
+    font-family: inherit;      
+    text-decoration: none; 
     transition: color 0.2s ease;
 }
 
-/* Hover-effekt: Gjør teksten litt mørkere (gråere) når du peker på den */
 .company-location a:hover {
-    color: #a0a0a0;             /* Mørkere nyanse av den hvite teksten */
+    color: #a0a0a0;            
 }
