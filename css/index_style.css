@@ -64,13 +64,13 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: #ffe4e4;           
+    color: #ededed;           
     font-family: inherit;
     transition: color 0.2s ease;
 }
 
 nav a:hover {
-    color: #ffffff;           
+    opacity: 0.7;       
 }
 
 /* ---- Scrollbar ---- */
