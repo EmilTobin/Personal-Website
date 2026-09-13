@@ -80,8 +80,8 @@ html::-webkit-scrollbar {
 
 /* Firefox og IE/Edge */
 html {
-    scrollbar-width: none;     /* Firefox */
-    -ms-overflow-style: none;  /* Internet Explorer 10+ og Edge */
+    scrollbar-width: none;     
+    -ms-overflow-style: none;  
 }
 
 
