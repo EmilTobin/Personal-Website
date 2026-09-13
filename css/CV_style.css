@@ -1,7 +1,6 @@
 /* Fonter */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Syne:wght@700;800&display=swap');
 
-/* Mørkt tema og generelle innstillinger */
 body {
     font-family: 'Fira Code', monospace;
     background-color: #020202; 
@@ -10,7 +9,7 @@ body {
     padding: 0px 130px;        
 }
 
-/* Overskrifter med karaktersterke Syne */
+/* Overskrifter med Syne */
 h1, h2, h3 {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
@@ -18,7 +17,7 @@ h1, h2, h3 {
     margin-top: 20px;
 }
 
-/* ---- Header & SVG-ramme (Fiksert i toppen) ---- */
+/* ---- Header ---- */
 header {
     position: fixed;          
     top: -10px;               
@@ -27,9 +26,8 @@ header {
     z-index: 1000;            
 }
 
-/* Skyver alt innholdet i <main> ned slik at det danner avstand til rammen */
 main {
-    padding-top: 250px; /* Dytter alt trygt ned under rammen */
+    padding-top: 250px; 
     opacity: 0; 
     animation-name: ultraSmoothFade;
     animation-duration: 0.8s; 
@@ -92,7 +90,7 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
     }
 }
 
-/* --- Global Container for CV-en --- */
+/* --- CV-container --- */
 .cv-container {
     max-width: 1000px;
     margin: 0px;
@@ -101,11 +99,11 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
 }
 
 .cv-header {
-    margin-top: 135px; /* Dytter navnet og kontaktinfoen videre ned */
+    margin-top: 135px; 
     left: 0px;
 }
 
-/* Navnet ditt i toppen av CV-en */
+/* Navn*/
 .cv-header h1 {
     font-family: 'Syne', sans-serif;
     /*font-size: 2.8rem;*/
@@ -129,9 +127,9 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
     color: #ffffff;
 }
 
-/* --- Seksjons-overskrifter (Experience, Education osv.) --- */
+/* --- Seksjons-overskrifter --- */
 .cv-section h2 {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Bruker Syne i stedet for Helvetica */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
     font-size: 1.6rem;
     color: #ffffff;
     display: flex;
