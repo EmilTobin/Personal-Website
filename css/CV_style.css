@@ -73,6 +73,7 @@ nav a:hover {
 }
 
 /* ---- Scrollbar ---- */
+/* Fungerer denne for alle webleserne? Chrome, Firefox, Edge, Safari?*/
 html::-webkit-scrollbar { display: none; }
 html { scrollbar-width: none; -ms-overflow-style: none; }
 
