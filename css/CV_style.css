@@ -73,9 +73,16 @@ nav a:hover {
 }
 
 /* ---- Scrollbar ---- */
-/* Fungerer denne for alle webleserne? Chrome, Firefox, Edge, Safari?*/
-html::-webkit-scrollbar { display: none; }
-html { scrollbar-width: none; -ms-overflow-style: none; }
+/* Chrome, Safari og Opera */
+html::-webkit-scrollbar {
+    display: none;
+}
+
+/* Firefox og IE/Edge */
+html {
+    scrollbar-width: none;  
+    -ms-overflow-style: none;  
+}
 
 /* ---- Animasjoner ---- */
 @keyframes ultraSmoothFade {
