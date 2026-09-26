@@ -9,6 +9,12 @@ body {
     padding: 0px 130px 80px;        
 }
 
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* Overskrifter med Syne */
 h1, h2, h3 {
     font-family: 'Syne', sans-serif;
@@ -39,8 +45,8 @@ nav {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     
-    /* SVG-en dimensjoner (1821x179) */
     aspect-ratio: 1821 / 179; 
+    min-height: 0;      /* Hjelper Safari med å beregne aspect-ratio i flex/fixed context */
 
     display: flex;
     align-items: center;
@@ -114,6 +120,7 @@ h1 {
     display: flex;
     align-items: center;
     gap: 40px; 
+    position: relative; 
 }
 
 /* Sikksakk */
@@ -124,6 +131,8 @@ h1 {
 /* Dimesnjon 1920x1080 */
 .gallery-item img {
     width: 50%; 
+    max-width: 50%;     
+    flex-shrink: 0;    
     height: auto;
     border-radius: 0px; 
     object-fit: cover;
@@ -168,8 +177,8 @@ h1 {
 .bird-animation {
     position: absolute;
     width: 450px;
-    left: 350px;         
-    margin: 40px auto; 
+    left: 50%;          
+    pointer-events: none; 
 }
 
 .bird-animation video {
