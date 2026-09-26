@@ -117,13 +117,12 @@ main {
 }
 
 /* Jord-animasjon */
-/* Containeren som fungerer som maske/ramme */
 .earth-animation {
     z-index: -1000; 
     width: 530px;
     height: 480px;
     overflow: hidden;
-    position: relative; /* Behold relative så 'position: absolute' på videoen fungerer */
+    position: relative; 
 
     float: left;  
     shape-outside: circle(40% at 45% 60%);
@@ -136,8 +135,8 @@ main {
 
 /* Selve videoen inne i rammen */
 .earth-animation video {
-    width: 680px;         /* Setter en fast pikselbredde istedenfor % + max-width: none */
-    max-width: 680px;     /* Tvinger Safari/Chrome til å holde seg her */
+    width: 680px;        
+    max-width: 680px;     
     height: auto;
     position: absolute;
     top: 40%;
