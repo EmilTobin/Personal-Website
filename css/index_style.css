@@ -9,6 +9,12 @@ body {
     padding: 0px 130px;        
 }
 
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* Overskrifter med Syne */
 h1, h2, h3 {
     font-family: 'Syne', sans-serif;
