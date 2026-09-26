@@ -9,12 +9,6 @@ body {
     padding: 0px 130px;        
 }
 
-img, video {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
 /* Overskrifter med Syne */
 h1, h2, h3 {
     font-family: 'Syne', sans-serif;
@@ -123,44 +117,45 @@ main {
 }
 
 /* Jord-animasjon */
+/* Containeren som fungerer som maske/ramme */
 .earth-animation {
     z-index: -1000; 
-    width: 490px;
-    height: 440px;
+    width: 530px;
+    height: 480px;
     overflow: hidden;
-    position: relative;
+    position: relative; /* Behold relative så 'position: absolute' på videoen fungerer */
 
     float: left;  
-    left: -10px;                         
     shape-outside: circle(40% at 45% 60%);
     shape-margin: 30px; 
-    margin-top: 60px;                        
+
+    margin-top: 60px; 
     margin-bottom: 20px;
+    margin-left: -10px; 
 }
 
+/* Selve videoen inne i rammen */
 .earth-animation video {
-  width: 130%;
-  max-width: none;
-  height: auto;
-  position: absolute;
-  top: 40%;
-  left: 60%; 
-  transform: translate(-50%, -50%);
+    width: 680px;         /* Setter en fast pikselbredde istedenfor % + max-width: none */
+    max-width: 680px;     /* Tvinger Safari/Chrome til å holde seg her */
+    height: auto;
+    position: absolute;
+    top: 40%;
+    left: 60%; 
+    transform: translate(-50%, -50%);
 }
 
 
 
 /* ---- Lenker ---- */
 .social-links {
-    position: absolute;      
-    top: 500px;               
-    left: calc(130px + 400px + 40px); /* (Body padding) + (Jordens bredde) + (Ønsket gap) */
-    
+    clear: both;
+    float: right;
     display: flex;
     flex-direction: column;   
-    gap: 15px;               
+    gap: 15px;  
     
-    margin-top: 0;           
+    margin-top: -300px;
 }
 
 /* Tekst for lenker */
